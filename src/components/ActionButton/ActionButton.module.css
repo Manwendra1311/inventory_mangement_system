@@ -1,0 +1,21 @@
+.approval_action_button_approve {
+    background-color: #596C91;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    max-width: max-content;
+}
+
+.approval_action_button_decline {
+    background-color: #fff;
+    color: #E80000;
+    border: 1px solid #E80000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    max-width: max-content;
+}

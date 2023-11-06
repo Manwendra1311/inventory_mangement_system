@@ -1,0 +1,88 @@
+.stats_table_container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    background: var(--neutral-neutral-02, #fff);
+    box-shadow: 5px 4px 20px 0px rgba(250, 123, 66, 0.06);
+    margin-top: 20px;
+  }
+  
+  .stats_title_actions_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    align-items: center;
+    padding-right: 32px;
+    padding-top: 10px;
+  }
+  
+  .stats_table_title {
+    color: var(--neutral-neutral-01, #000);
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 10px 10px 16px;
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+  }
+  
+  .stats_table_title img{
+    width: 27.001px;
+    height: 15.935px;
+    cursor: pointer;
+  }
+  
+  .table_nav_bar{
+    padding: 20px;
+    padding-left: 60px;
+    background-color: #f2f2f2;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  
+  .row:nth-child(odd) {
+    background-color: #fa7b420a;
+  }
+  
+  .table_header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 8px 0;
+    position: sticky;
+    top: 0;
+  }
+  
+  .table_header div {
+    padding: 0 16px;
+    font-weight: 600;
+    flex: 1;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cell {
+    flex: 1;
+    padding: 0 16px;
+    color: var(--neutral-neutral-01, #000);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    .stats_table_container {
+      font-size: 14px;
+    }
+  }

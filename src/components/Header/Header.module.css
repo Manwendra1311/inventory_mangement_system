@@ -1,0 +1,29 @@
+.admin_dashboard_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--neutral-neutral-02, #fff);
+    padding: 25px;
+  }
+  
+  .admin_dashboard_header span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .admin_dashboard_header_actions {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .admin_dashboard_header_actions img {
+    cursor: pointer;
+  }
+  
+img{
+    width: 20px;
+height: 20.173px;
+}
+  

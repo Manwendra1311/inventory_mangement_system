@@ -1,0 +1,25 @@
+/* SearchField.css */
+.search_field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 6px;
+    border-radius: 6.667px;
+    border: 0.667px solid #FA7B42;
+    max-width: 230px;
+    height: 25px;
+    flex-shrink: 0;
+}
+
+.search_icon {
+    padding: 6px;
+    color: #999;
+}
+
+.search_input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}

@@ -1,0 +1,140 @@
+.admin_home_sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  max-width: 210px;
+  height: calc(100% - 20px);
+  background: var(--neutral-neutral-02, #fff);
+  box-shadow: 5px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.admin_home_sidebar_collpased {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+  max-width: 70px;
+  height: calc(100% - 20px);
+  background: var(--neutral-neutral-02, #fff);
+  box-shadow: 5px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.inventory_logo_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.inventory_logo_wrap span{
+    font-family: Nunito;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  color: #fa7b42;
+}
+
+
+.loyal_partners_logo {
+  width: 100px;
+  height: 90px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.loyal_partners_logo_collapsed{
+    width: 55px;
+    height: 35px;
+    display: flex;
+    padding-bottom: 40px;
+  padding-top: 5px;
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.section_logo {
+  width: 25px;
+  height: 20px;
+}
+
+.admin_dashboard_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+  height: 30%;
+  align-self: center;
+  width: 100%;
+}
+
+.dashboard_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: calc(100% - 25px);
+  min-height: 40px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.dashboard_section span {
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* .dashboard_section:hover {
+    background-color: #ffeae0;
+    border-left: 5px solid #fa7b42;
+  } */
+
+.dashboard_section_active {
+  background-color: #ffeae0;
+  border-left: 5px solid #fa7b42;
+}
+
+.navbar_collapse_button {
+  display: flex;
+}
+
+.dashboard_sidebar_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  padding-left: 20px;
+  min-width: 210px;
+  height: 10%;
+  margin-top: 3px;
+  background: var(--neutral-neutral-02, #fff);
+  box-shadow: 5px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_mobile_view {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .navbar_desktop_view {
+    display: none;
+  }
+
+  .navbar_mobile_view {
+    display: flex;
+  }
+
+  .navbar_collapse_button {
+    display: none;
+  }
+}
