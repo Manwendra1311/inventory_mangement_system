@@ -20,6 +20,7 @@
     flex-direction: row;
     justify-content: space-evenly;
   }
+
   
   .stat_board_single_stat {
     display: flex;
@@ -31,8 +32,8 @@
   }
   
   .stat_board_single_stat img {
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
   }
   
   .stat_board_single_stat_name {

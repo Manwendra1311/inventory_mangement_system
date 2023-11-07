@@ -3,6 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import DashBoard from "../DashBoard/DashBoard";
+import Product from "../Product/Product";
+import AddProduct from "../AddProduct/AddProduct";
+import Notification from "../Notification/Notification";
 
 const User = () => {
 
@@ -15,17 +18,17 @@ const User = () => {
     {
       sectionName: "Products",
       url: "/products",
-      component: <div>Products</div>,
+      component: <Product/> ,
     },
     {
       sectionName: "AddProducts",
       url: "/add_products",
-      component: <div>Add Products</div>,
+      component: <AddProduct/> ,
     },
     {
       sectionName: "Notification",
       url: "/notification",
-      component: <div>notification</div>,
+      component: <Notification/> ,
     },
   ];
 

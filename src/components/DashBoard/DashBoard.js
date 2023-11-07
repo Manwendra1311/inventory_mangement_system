@@ -5,7 +5,6 @@ import OutOfStock from "../../assets/DashBoard/sold_out.png";
 import Categories from "../../assets/DashBoard/category.png";
 import StatsBoard from "../StatsBoard/StatsBoard";
 import ActionButton from "../ActionButton/ActionButton";
-import View from "../../assets/DashBoard/view.png";
 import { useState } from "react";
 import StatsTable from "../StatsTable/StatsTable";
 import SearchField from "../SearchField/SearchField";
@@ -23,7 +22,6 @@ const DashBoard = () => {
   ];
   const dashboard_details_values = ["9", "$35,775.000", "1", "2"];
 
-  const viewDetailsHandler = () => {};
 
   const handleGetMoreDetails = () => {};
 
@@ -39,7 +37,6 @@ const DashBoard = () => {
     "Price",
     "Quantity",
     "Value",
-    "View Receipt",
     "Action",
   ];
 
@@ -49,7 +46,6 @@ const DashBoard = () => {
     "price",
     "quantity",
     "value",
-    "view_receipt",
     "action",
   ];
 
@@ -60,9 +56,6 @@ const DashBoard = () => {
       price: "$12",
       quantity: "15",
       value: "$180",
-      view_receipt: (
-        <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-      ),
       action: (
         <div className={styles.action_buttons_wrapper}>
           <ActionButton
@@ -82,9 +75,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -104,9 +94,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -126,9 +113,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -148,9 +132,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -170,9 +151,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -192,9 +170,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -214,9 +189,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -236,9 +208,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -258,9 +227,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -280,9 +246,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -302,9 +265,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -324,9 +284,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
@@ -346,9 +303,6 @@ const DashBoard = () => {
         price: "$12",
         quantity: "15",
         value: "$180",
-        view_receipt: (
-          <img src={View} alt={View} onClick={viewDetailsHandler} className={styles.view_details}></img>
-        ),
         action: (
           <div className={styles.action_buttons_wrapper}>
             <ActionButton
