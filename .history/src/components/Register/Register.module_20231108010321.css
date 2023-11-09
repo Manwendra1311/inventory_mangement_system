@@ -1,0 +1,79 @@
+.body {
+    /* background:url('../images/IMS.png') no-repeat center center fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .header {
+    color: #36013f;
+    font-size: 25px;
+    font-family: Nunito;
+    font-weight: 600;
+  }
+  
+  .register_body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 84vh;
+    min-width: 450px;
+    padding: 40px;
+    background-color: #fff;
+    gap: 20px;
+    border-radius: 8px;
+  }
+  
+  .register_inputs_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .register_inputs_container label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c264ff;
+  }
+  
+  .register_inputs_container input {
+    width: calc(100% - 20px);
+    height: 38px;
+    border: 2px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #993399;
+    background: #fffaf8;
+    padding: 10px;
+  }
+  
+  .register_button {
+    width: 100%;
+    min-height: 48px;
+    padding:12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #993399;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  
+  .signup_button{
+    width:100%;
+    
+  
+  }
+  .register_par{
+    display:flex;
+    
+    justify-content: center;
+    align-items:center;
+    flex-direction:row;
+
+  }

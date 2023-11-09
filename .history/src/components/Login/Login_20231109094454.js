@@ -17,13 +17,17 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    // Check if the entered username and password match any user
     const validUser = users.find(user => user.username === username && user.password === password);
 
     if (validUser) {
+      // Display success message and navigate to the User page
       setError('');
       alert('Login successful!');
       navigate('/user');
     } else {
+      // Display an error message if no match is found
       setError('Username or password is incorrect');
     }
   };

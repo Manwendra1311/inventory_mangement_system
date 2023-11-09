@@ -8,22 +8,27 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  // Array of users with their usernames and passwords
   const users = [
     { username: 'user1', password: 'pass1' },
     { username: 'user2', password: 'pass2' },
-    { username: 'user3', password: 'pass3' },
-    { username: 'user4', password: 'pass4' }
+    
+    // Add more users as needed
   ];
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    // Check if the entered username and password match any user
     const validUser = users.find(user => user.username === username && user.password === password);
 
     if (validUser) {
+      // Display success message and navigate to the User page
       setError('');
       alert('Login successful!');
       navigate('/user');
     } else {
+      // Display an error message if no match is found
       setError('Username or password is incorrect');
     }
   };

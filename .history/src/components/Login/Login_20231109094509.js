@@ -24,6 +24,7 @@ const Login = () => {
       alert('Login successful!');
       navigate('/user');
     } else {
+      // Display an error message if no match is found
       setError('Username or password is incorrect');
     }
   };
