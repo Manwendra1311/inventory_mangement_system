@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from "./Register.module.css";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -9,14 +10,32 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
+    // if (password !== confirmPassword) {
+    //   setError('Passwords do not match');
+    //   return;
+    // }
+    // alert('Registration successful!');
+    // navigate('/');
+
+    try{
+      await axios.post("http://localhost:3000/register",{
+        username, password
+        // navigate('/')
+      }).then(res=>{
+        if(res.data==="exist"){
+          alert("user already exist")
+        }else if(res.data==="not exist"){
+          navigate("/");
+        }
+      }).catch(e=>{
+        alert("Invalid user");
+        console.log(e);
+      })
+    }catch(e){
+      setError(e);
     }
-    alert('Registration successful!');
-    navigate('/');
   };
 
   return (
