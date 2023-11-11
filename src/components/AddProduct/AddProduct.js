@@ -8,22 +8,22 @@ const AddProduct = () => {
         <div className={styles.input_wrap}>
           <div className={styles.field_wrap}>
             <label>Name</label>
-            <input placeholder="Enter your name" />
+            <input placeholder="Enter the product name" />
           </div>
           <div className={styles.field_wrap}>
             <label>Category</label>
-            <input placeholder="Enter your name" />
+            <input placeholder="Enter the category" />
           </div>
         </div>
         <div className={styles.input_wrap}>
           <div className={styles.field_wrap}>
             <label>Stock</label>
-            <input placeholder="Enter your name" />
+            <input placeholder="Enter the quantity" />
           </div>
 
           <div className={styles.field_wrap}>
             <label>Price</label>
-            <input placeholder="Enter your name" />
+            <input placeholder="Enter the price" />
           </div>
         </div>
       </form>
