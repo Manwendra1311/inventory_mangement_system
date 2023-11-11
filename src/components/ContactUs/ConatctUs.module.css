@@ -1,0 +1,23 @@
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; 
+    margin: auto; 
+    max-width: 600px; 
+  }
+  
+  .header {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 20px;
+    align-items: center;
+    font-size: 1rem;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+  }
+  .logo {
+    max-width: 200px; /* Ensure the logo does not exceed its container's width */
+    margin-bottom: 1px; /* Add some spacing between the logo and the heading */
+  }  

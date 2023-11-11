@@ -6,7 +6,7 @@ import Collapse from "../../assets/NavBar/collapse_sidebar.png";
 import Products from "../../assets/NavBar/products.png";
 import Dashboard from "../../assets/NavBar/dashboard_logo.png";
 import AddProducts from "../../assets/NavBar/add_products.png";
-import ContactUs from "../../assets/NavBar/conatactus.png"
+import ContactUs from "../../assets/NavBar/contactusicon.png"
 import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -24,7 +24,7 @@ const NavBar = () => {
     },
     {
       sectionName: "Contact Us",
-      url: "/user/add_products",
+      url: "/user/contactus",
       sectionIcon: ContactUs,
     },
   ];

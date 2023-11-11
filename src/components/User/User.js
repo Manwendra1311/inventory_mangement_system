@@ -6,6 +6,8 @@ import DashBoard from "../DashBoard/DashBoard";
 import Product from "../Product/Product";
 import AddProduct from "../AddProduct/AddProduct";
 import Notification from "../Notification/Notification";
+import ConatctUs from "../ContactUs/ContactUs";
+
 
 const User = () => {
 
@@ -29,6 +31,11 @@ const User = () => {
       sectionName: "Notification",
       url: "/notification",
       component: <Notification/> ,
+    },
+    {
+      sectionName: "Contact Us",
+      url: "/ContactUs",
+      component: <ConatctUs/>,
     },
   ];
 
