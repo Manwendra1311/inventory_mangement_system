@@ -17,6 +17,11 @@
     color: #999;
 }
 
+.search_icon img{
+    width: 25px;
+    height: 20px;
+}
+
 .search_input {
     flex: 1;
     border: none;

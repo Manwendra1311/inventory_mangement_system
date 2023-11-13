@@ -35,9 +35,9 @@ const Header = () => {
           onClick={() => {
             toggleFullScreen();
           }}
-        ></img>
-        <img src={NotificationIcon} alt="NotificationIcon" onClick={()=>{navigate("/user/notification")}}></img>
-        <img src={ProfileIcon} alt="ProfileIcon" onClick={()=>{setProfileState(!profileState)}}></img>
+          className={styles.header_icon}></img>
+        <img src={NotificationIcon} alt="NotificationIcon" onClick={()=>{navigate("/user/notification")}} className={styles.header_icon}></img>
+        <img src={ProfileIcon} alt="ProfileIcon" onClick={()=>{setProfileState(!profileState)}} className={styles.header_icon}></img>
       </div>
     </div>
   );
