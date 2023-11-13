@@ -1,23 +1,42 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    padding: 20px;
+    margin: 20px;
     border-radius: 10px; 
-    margin: auto; 
-    max-width: 600px; 
+    margin-bottom: 0;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px)
   }
   
   .header {
-    color: black;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 600;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
     font-size: 1rem;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
+    color: #36013f;
+    max-width: 600px;
   }
+
+  .title{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Nunito;
+  }
+
+  .reach_us{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Nunito;
+  }
+
   .logo {
-    max-width: 200px; /* Ensure the logo does not exceed its container's width */
-    margin-bottom: 1px; /* Add some spacing between the logo and the heading */
+    width: 150px;
+    height: 150px;
   }  

@@ -9,16 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // const users = [
-  //   { username: 'user1', password: 'pass1' },
-  //   { username: 'user2', password: 'pass2' },
-  //   { username: 'user3', password: 'pass3' },
-  //   { username: 'user4', password: 'pass4' }
-  // ];
-
-  // async function submit(e){
-  //   e.preventDefault();
-  // }
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -42,16 +32,6 @@ const Login = () => {
       setError(e);
     }
 
-    // const validUser="";
-    // // const validUser = users.find(user => user.username === username && user.password === password);
-
-    // if (validUser) {
-    //   setError('');
-    //   alert('Login successful!');
-    //   navigate('/user');
-    // } else {
-    //   setError('Username or password is incorrect');
-    // }
   };
 
   return (
