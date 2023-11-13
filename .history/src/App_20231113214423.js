@@ -4,8 +4,8 @@ import Login from './components/Login/Login';
 import User from './components/User/User';
 import Register from './components/Register/Register';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import axios from 'axios';
-
+import axios from 'axios'
+;
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -26,29 +26,24 @@ function App() {
     checkAuthentication();
   }, []);
 
-  const PrivateRoute = ({ element, path }) => {
-    return isAuthenticated ? (
-      <Route path={path} element={element} />
-    ) : (
-      <Navigate to="/" replace />
-    );
-  };
-
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
+            element={isAuthenticated ? <Navigate to="/user" /> : <Login />}
+          />
+          <Route
+            path="/user/*"
             element={
               isAuthenticated ? (
-                <Navigate to="/user" />
+                <User />
               ) : (
-                <Login setIsAuthenticated={setIsAuthenticated} />
+                <Navigate to="/" replace />
               )
             }
           />
-          <PrivateRoute path="/user/*" element={<User />} />
           <Route path="/register/*" element={<Register />} />
         </Routes>
       </BrowserRouter>

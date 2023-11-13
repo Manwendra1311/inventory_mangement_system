@@ -26,29 +26,24 @@ function App() {
     checkAuthentication();
   }, []);
 
-  const PrivateRoute = ({ element, path }) => {
-    return isAuthenticated ? (
-      <Route path={path} element={element} />
-    ) : (
-      <Navigate to="/" replace />
-    );
-  };
-
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
+            element={isAuthenticated ? <Navigate to="/user" /> : <Login />}
+          />
+          <Route
+            path="/user/*"
             element={
               isAuthenticated ? (
-                <Navigate to="/user" />
+                <User />
               ) : (
-                <Login setIsAuthenticated={setIsAuthenticated} />
+                <Navigate to="/" replace />
               )
             }
           />
-          <PrivateRoute path="/user/*" element={<User />} />
           <Route path="/register/*" element={<Register />} />
         </Routes>
       </BrowserRouter>

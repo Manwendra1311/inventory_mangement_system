@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from "./Login.module.css";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
-const Login = ({ checkAuthentication }) => {
+const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -12,12 +13,22 @@ const Login = ({ checkAuthentication }) => {
     e.preventDefault();
 
     try {
-      await checkAuthentication(username, password);
-      setError('');
-      alert("Successfully Logged In");
-      navigate("/user");
+      const response = await axios.post("http://localhost:3000/login", {
+        username,
+        password
+      });
+
+      console.log('Authentication Response:', response);
+
+      if (response.data === "authenticated") {
+        alert("Successfully Logged In");
+        navigate("/user");
+      } else {
+        setError("Invalid User");
+      }
     } catch (error) {
-      setError('Invalid User');
+      setError("Authentication failed");
+      console.error('Authentication Error:', error);
     }
   };
 

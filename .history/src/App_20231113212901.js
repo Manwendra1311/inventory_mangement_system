@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login';
 import User from './components/User/User';
@@ -10,27 +10,24 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if the user is authenticated
     const checkAuthentication = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/check-auth"); // Replace with your authentication check API endpoint
-        if (response.data === "authenticated") {
-          setIsAuthenticated(true);
-        }
+        const response = await axios.get('http://localhost:3000/check-auth'); // Replace with your actual authentication check endpoint
+        setIsAuthenticated(response.data.isAuthenticated);
       } catch (error) {
         console.error('Authentication check failed:', error);
+        setIsAuthenticated(false);
       }
     };
 
-    // Call the authentication check function
     checkAuthentication();
-  }, []);
+  }, []); // The empty dependency array ensures the effect runs only once when the component mounts
 
   const PrivateRoute = ({ element, path }) => {
     return isAuthenticated ? (
       <Route path={path} element={element} />
     ) : (
-      <Navigate to="/" replace />
+      <Navigate to="/login" replace />
     );
   };
 
@@ -38,16 +35,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              isAuthenticated ? (
-                <Navigate to="/user" />
-              ) : (
-                <Login setIsAuthenticated={setIsAuthenticated} />
-              )
-            }
-          />
+          <Route path="/" element={<Login />} />
           <PrivateRoute path="/user/*" element={<User />} />
           <Route path="/register/*" element={<Register />} />
         </Routes>

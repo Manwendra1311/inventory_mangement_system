@@ -1,0 +1,22 @@
+import './App.css';
+import Login from './components/Login/Login';
+import User from './components/User/User';
+import Register from './components/Register/Register';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import PrivateRoute from './PrivateRoute';
+
+function App() {
+  return (
+    <div className="App">
+         <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>} />
+          <PrivateRoute path="/user" element={<User />} authenticated={isAuthenticated} />
+          <Route path="/Register/*" element={<Register/>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
