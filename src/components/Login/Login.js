@@ -1,37 +1,24 @@
 import { useState } from 'react';
 import styles from "./Login.module.css";
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
 
-const Login = () => {
+const Login = ({ checkAuthentication }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-
-  async function handleLogin(e) {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    try{
-      await axios.post("http://localhost:3000/",{
-        username, password
-      })
-      .then(res=>{
-        if(res.data==="exist"){
-          alert("Successfully Logged In")
-          navigate("/user")
-        }else if(res.data==="not exist"){
-          alert("Invalid User")
-        }
-      }).catch(e=>{
-        alert("Invalid user");
-        console.log(e);
-      })
-    }catch(e){
-      setError(e);
+    try {
+      await checkAuthentication(username, password);
+      setError('');
+      alert("Successfully Logged In");
+      navigate("/user");
+    } catch (error) {
+      setError('Invalid User');
     }
-
   };
 
   return (
@@ -60,8 +47,12 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className={styles.login_button} type="submit">Login</button>
-        <a href="/Register/" className={styles.signup_button}>Sign Up</a>
+        <button className={styles.login_button} type="submit">
+          Login
+        </button>
+        <a href="/Register/" className={styles.signup_button}>
+          Sign Up
+        </a>
         {error && <p className={styles.error}>{error}</p>}
       </form>
     </div>
