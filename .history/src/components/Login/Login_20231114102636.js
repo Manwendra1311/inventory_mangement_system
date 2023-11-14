@@ -61,7 +61,7 @@ const Login = ({ checkAuthentication }) => {
           Login
         </button>
         <a href="/Register/" className={styles.signup_button}>
-          Don't have an account?Sign Up
+          Don't have an Sign Up
         </a>
         {error && <p className={styles.error}>{error}</p>}
       </form>
