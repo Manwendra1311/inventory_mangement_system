@@ -6,7 +6,13 @@ import Register from './components/Register/Register';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const isAccessTokenPresent = () => {
+    const accessToken = localStorage.getItem('accessToken');
+    return !!accessToken; 
+  };
+
+  const [isAuthenticated, setIsAuthenticated] = useState(isAccessTokenPresent());
 
   const checkAuthentication = async (username, password) => {
     try {

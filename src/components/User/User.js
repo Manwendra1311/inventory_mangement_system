@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import DashBoard from "../DashBoard/DashBoard";
-import Product from "../Product/Product";
+// import Product from "../Product/Product";
 import AddProduct from "../AddProduct/AddProduct";
 import Notification from "../Notification/Notification";
 import ConatctUs from "../ContactUs/ContactUs";
@@ -17,11 +17,11 @@ const User = () => {
       url: "/",
       component: <DashBoard/>,
     },
-    {
-      sectionName: "Products",
-      url: "/products",
-      component: <Product/> ,
-    },
+    // {
+    //   sectionName: "Products",
+    //   url: "/products",
+    //   component: <Product/> ,
+    // },
     {
       sectionName: "AddProducts",
       url: "/add_products",

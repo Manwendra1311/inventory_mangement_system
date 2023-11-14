@@ -9,14 +9,10 @@
 
 }
 
-.view_details{
-    width: 24px;
-height: 12.663px;
-cursor: pointer;
-}
-
 .action_buttons_wrapper {
     display: flex;
     gap: 5px;
 }
+
+
 

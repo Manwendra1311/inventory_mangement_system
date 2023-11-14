@@ -3,7 +3,7 @@ import styles from "./NavBar.module.css";
 
 import InventoryLogo from "../../assets/NavBar/inventory_logo.png";
 import Collapse from "../../assets/NavBar/collapse_sidebar.png";
-import Products from "../../assets/NavBar/products.png";
+// import Products from "../../assets/NavBar/products.png";
 import Dashboard from "../../assets/NavBar/dashboard_logo.png";
 import AddProducts from "../../assets/NavBar/add_products.png";
 import ContactUs from "../../assets/NavBar/contactusicon.png"
@@ -12,11 +12,11 @@ import { useNavigate } from "react-router-dom";
 const NavBar = () => {
   const dashboardItems = [
     { sectionName: "Dashboard", url: "/user/", sectionIcon: Dashboard },
-    {
-      sectionName: "Products",
-      url: "/user/products",
-      sectionIcon: Products,
-    },
+    // {
+    //   sectionName: "Products",
+    //   url: "/user/products",
+    //   sectionIcon: Products,
+    // },
     {
       sectionName: "Add Products",
       url: "/user/add_products",

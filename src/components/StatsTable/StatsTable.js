@@ -12,6 +12,9 @@ const StatsTable = ({
   tableIcon,
   state
 }) => {
+
+
+  
   return (
     <div className={styles.stats_table_container}>
       <div className={styles.stats_title_actions_container}>
@@ -28,10 +31,11 @@ const StatsTable = ({
       {tableData.map((item, index) => (
         <div className={styles.row} key={index}>
           {tableHeaders.map((header, dataIndex) => (
-            <div className={styles.cell} key={dataIndex}>
+             <div className={styles.cell} key={dataIndex}>
               {item[tableFieldMapping[dataIndex]]}
             </div>
           ))}
+          
         </div>
       ))}
     </div>

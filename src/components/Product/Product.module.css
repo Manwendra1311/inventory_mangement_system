@@ -1,8 +1,0 @@
-.product_wrap{
-    margin: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: calc(100% - 50px);
-    height: calc(100% - 105px);
-}
