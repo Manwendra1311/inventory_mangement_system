@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from "./Login.module.css";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const Login = ({ checkAuthentication }) => {
   const navigate = useNavigate();
@@ -13,9 +14,18 @@ const Login = ({ checkAuthentication }) => {
 
     try {
       await checkAuthentication(username, password);
-      setError('');
-      alert("Successfully Logged In");
-      navigate("/user");
+      await axios.post("http://localhost:3000/",{
+        
+        username,password
+      }).then(res=>{
+        if(res.data==="exist"){
+          setError('');
+          alert("Successfully Logged In")
+          navigate("/user");
+        }else if(res.data==="not exist"){
+          alert("Invalid User")
+        }
+      })
     } catch (error) {
       setError('Invalid User');
     }
