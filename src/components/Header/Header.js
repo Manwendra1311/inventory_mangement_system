@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styles from "./Header.module.css";
 import FullPageIcon from "../../assets/Header/full_page_icon.png";
 import CollapsePageIcon from "../../assets/Header/collapse_page_icon.png";
-import { useNavigate } from "react-router-dom";
-import NotificationIcon from "../../assets/Header/notification.png";
+// import { useNavigate } from "react-router-dom";
+// import NotificationIcon from "../../assets/Header/notification.png";
 import ProfileIcon from "../../assets/Header/profile.png";
 import SignOutIcon from "../../assets/Header/sign_out.svg"
 
@@ -12,7 +12,7 @@ const Header = () => {
 
   const [fullScreen, setFullScreen] = useState(false);
   const [profileState,setProfileState]=useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function toggleFullScreen() {
     if (fullScreen) {
@@ -26,7 +26,7 @@ const Header = () => {
 
   const signOut=()=>{  
     localStorage.clear();
-    navigate("/")
+    window.location.reload();
   }
 
 
@@ -42,7 +42,7 @@ const Header = () => {
             toggleFullScreen();
           }}
           className={styles.header_icon}></img>
-        <img src={NotificationIcon} alt="NotificationIcon" onClick={()=>{navigate("/user/notification")}} className={styles.header_icon}></img>
+        {/* <img src={NotificationIcon} alt="NotificationIcon" onClick={()=>{navigate("/user/notification")}} className={styles.header_icon}></img> */}
         <img src={ProfileIcon} alt="ProfileIcon" onClick={()=>{setProfileState(!profileState)}} className={styles.header_icon}></img>
         {profileState && (
         <div

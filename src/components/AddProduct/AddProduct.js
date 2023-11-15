@@ -3,7 +3,7 @@ import styles from "./AddProduct.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddProduct = () => {
+const AddProduct = (props) => {
 
   const [name,setName]=useState("");
   const [category,setCategory]=useState("");
@@ -15,7 +15,7 @@ const AddProduct = () => {
 
   const handleClick=()=>{
     setArr([name,category,stock,price])
-    console.log(arr);
+    console.log(props.data);
   }
 
   const handelSubmit=()=>{
@@ -38,7 +38,7 @@ const AddProduct = () => {
   return (
     <div className={styles.add_product_wrap}>
       <span className={styles.header}>Add Product</span>
-      <form className={styles.add_product_form} onSubmit={handelSubmit}>
+      <form className={styles.add_product_form} onSubmit={handelSubmit} >
         <div className={styles.input_wrap}>
           <div className={styles.field_wrap}>
             <label>Name</label>

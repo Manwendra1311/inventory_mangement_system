@@ -69,16 +69,16 @@ const DashBoard = () => {
             ></ActionButton>
           </div>)
         })
-        setUnitStatsTableData(res.data);
+        searchText===""?setUnitStatsTableData(res.data):setUnitStatsTableData(res.data.filter(item=>item.name===searchText));
       }else Promise.reject();
     }).catch((err)=> alert(err));
-  },[])
+  },[searchText])
 
 
 
 
-  const handleSearch = () => {
-  setSearchText("");
+  const handleSearch = (text) => {
+  setSearchText(text);
   };
 
   //dashboard table
