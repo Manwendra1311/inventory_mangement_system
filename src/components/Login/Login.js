@@ -22,6 +22,7 @@ const Login = ({ checkAuthentication }) => {
           setError('');
           alert("Successfully Logged In")
           navigate("/user");
+          localStorage.setItem("accessToken","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRhMmE2NjQ0MTY2ZWMyZjcwMDliNjEiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzAwMDI0NTk4fQ.4MS-TT0TLgWdybxZNUQvxXHeSpiy6fdVRbroO-cmMCA")
         }else if(res.data==="not exist"){
           alert("Invalid User")
         }
