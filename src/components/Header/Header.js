@@ -5,6 +5,7 @@ import CollapsePageIcon from "../../assets/Header/collapse_page_icon.png";
 import { useNavigate } from "react-router-dom";
 import NotificationIcon from "../../assets/Header/notification.png";
 import ProfileIcon from "../../assets/Header/profile.png";
+import SignOutIcon from "../../assets/Header/sign_out.svg"
 
 const Header = () => {
   const userName = "Admin";
@@ -23,6 +24,11 @@ const Header = () => {
     }
   }
 
+  const signOut=()=>{  
+    localStorage.clear();
+    navigate("/login")
+  }
+
 
 
   return (
@@ -38,6 +44,23 @@ const Header = () => {
           className={styles.header_icon}></img>
         <img src={NotificationIcon} alt="NotificationIcon" onClick={()=>{navigate("/user/notification")}} className={styles.header_icon}></img>
         <img src={ProfileIcon} alt="ProfileIcon" onClick={()=>{setProfileState(!profileState)}} className={styles.header_icon}></img>
+        {profileState && (
+        <div
+          className={styles.profile}
+          onMouseLeave={() => {
+            setProfileState(false);
+          }}
+        >
+          <span
+            className={styles.profile_content}
+            onClick={() => {
+              signOut();
+            }}
+          >
+            <img src={SignOutIcon} alt=""></img> Sign Out
+          </span>
+        </div>
+      )}
       </div>
     </div>
   );

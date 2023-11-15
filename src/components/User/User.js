@@ -7,9 +7,33 @@ import DashBoard from "../DashBoard/DashBoard";
 import AddProduct from "../AddProduct/AddProduct";
 import Notification from "../Notification/Notification";
 import ConatctUs from "../ContactUs/ContactUs";
+import { useState } from "react";
 
 
 const User = () => {
+
+  const [notifications, setNotification]=useState([
+    {
+        title:"Item Removed",
+        content:"One Item is removed form the IT category",
+        button_group: [ "Dismiss"]
+    },
+    {
+        title:"Item Added",
+        content:"One Item is added to the grocery category",
+        button_group: ["Dismiss"]
+    },
+    {
+        title:"Item Edited",
+        content:"One item was edited",
+        button_group: ["Dismiss"]
+    },
+    {
+        title:"Item Edited",
+        content:"One item was edited",
+        button_group:["Dismiss"]
+    }, 
+])
 
   const tenantFeatures = [
     {
@@ -17,20 +41,15 @@ const User = () => {
       url: "/",
       component: <DashBoard/>,
     },
-    // {
-    //   sectionName: "Products",
-    //   url: "/products",
-    //   component: <Product/> ,
-    // },
     {
       sectionName: "AddProducts",
       url: "/add_products",
-      component: <AddProduct/> ,
+      component: <AddProduct state={setNotification} data={notifications}/> ,
     },
     {
       sectionName: "Notification",
       url: "/notification",
-      component: <Notification/> ,
+      component: <Notification data={notifications}/> ,
     },
     {
       sectionName: "Contact Us",

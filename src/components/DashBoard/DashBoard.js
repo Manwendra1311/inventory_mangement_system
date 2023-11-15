@@ -19,6 +19,7 @@ const DashBoard = () => {
   const [id,setId]=useState("");
   const [elementData,setElementData]=useState();
   const dashboard_icons = [ShoppingCart, Value, OutOfStock, Categories];
+  const [totalProducts,setTotalProduct]=useState(0);
 
   const dashboard_details = [
     "Total Products",
@@ -26,7 +27,10 @@ const DashBoard = () => {
     "Out of Stock",
     "All Catogories",
   ];
-  const dashboard_details_values = ["9", "$35,775.000", "1", "2"];
+
+  const dashboard_details_values = [totalProducts, "$35,775.000", "0", "4"];
+
+
   const handleGetMoreDetails = (type,id,data) => {
     if(type==="Delete"){
       console.log(id)
@@ -53,6 +57,7 @@ const DashBoard = () => {
         console.log(res.data);
         res.data.map((item,index)=>{
           item.sr_no=index+1;
+          setTotalProduct(index+1)
           return(item.action=<div className={styles.action_buttons_wrapper}>
             <ActionButton
               buttonText={"Delete"}

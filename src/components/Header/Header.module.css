@@ -26,4 +26,28 @@
     width: 20px;
 height: 20.173px;
 }
+
+.profile {
+  position: fixed;
+  position: absolute;
+  z-index: 20;
+  right: 50px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #fa7b42;
+  background: var(--neutral-neutral-02, #fff);
+}
+
+.profile_content {
+  display: flex;
+  gap: 10px;
+  color: var(--neutral-neutral-01, #000);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
   

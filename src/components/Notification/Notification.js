@@ -1,35 +1,14 @@
 import styles from "./Notification.module.css";
 
-const Notification=()=>{
+const Notification=(props)=>{
 
 
-    const notifications=[
-        {
-            title:"Item Removed",
-            content:"One Item is removed form the IT category",
-            button_group: [ "Dismiss"]
-        },
-        {
-            title:"Item Added",
-            content:"One Item is added to the grocery category",
-            button_group: ["Dismiss"]
-        },
-        {
-            title:"Item Edited",
-            content:"One item was edited",
-            button_group: ["Dismiss"]
-        },
-        {
-            title:"Item Edited",
-            content:"One item was edited",
-            button_group:["Dismiss"]
-        }, 
-    ]
+    
 
     return(
         <div className={styles.notifications}>
             <span className={styles.header}>Notification</span>
-            {notifications.map((item,index)=>{
+            {props.data.map((item,index)=>{
                 return(
                     <div key={index} className={styles.notification_wrap}>
                         <div className={styles.content_wrap}>
