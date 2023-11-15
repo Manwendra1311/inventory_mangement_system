@@ -69,7 +69,7 @@ const DashBoard = () => {
             ></ActionButton>
           </div>)
         })
-        searchText===""?setUnitStatsTableData(res.data):setUnitStatsTableData(res.data.filter(item=>item.name===searchText));
+        searchText===""?setUnitStatsTableData(res.data):setUnitStatsTableData(res.data.filter(item=>{return (item.name.includes(searchText) || item.category.includes(searchText) || item.stock.includes(searchText) || item.price.includes(searchText))}));
       }else Promise.reject();
     }).catch((err)=> alert(err));
   },[searchText])

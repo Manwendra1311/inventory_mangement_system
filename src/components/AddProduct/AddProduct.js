@@ -38,7 +38,7 @@ const AddProduct = (props) => {
   return (
     <div className={styles.add_product_wrap}>
       <span className={styles.header}>Add Product</span>
-      <form className={styles.add_product_form} onSubmit={handelSubmit} >
+      <form className={styles.add_product_form} onSubmit={handelSubmit} action={"/user"}>
         <div className={styles.input_wrap}>
           <div className={styles.field_wrap}>
             <label>Name</label>
