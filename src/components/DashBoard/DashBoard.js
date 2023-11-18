@@ -20,15 +20,16 @@ const DashBoard = () => {
   const [elementData,setElementData]=useState();
   const dashboard_icons = [ShoppingCart, Value, OutOfStock, Categories];
   const [totalProducts,setTotalProduct]=useState(0);
+  const [totalMoney,setTotalMoney]=useState("");
 
   const dashboard_details = [
     "Total Products",
     "Total Store Value",
     "Out of Stock",
-    "All Catogories",
+    "All Categories",
   ];
 
-  const dashboard_details_values = [totalProducts, "$35,775.000", "0", "4"];
+  const dashboard_details_values = [totalProducts, totalMoney, "0", "4"];
 
 
   const handleGetMoreDetails = (type,id,data) => {
@@ -49,15 +50,20 @@ const DashBoard = () => {
         setElementData(data);
     }
   };
+  
 
   useEffect(()=>{
     axios.get("http://localhost:3000/dashboardRoute")
     .then((res)=>{
       if(res.status===200){
         console.log(res.data);
+        let amount=0;
         res.data.map((item,index)=>{
           item.sr_no=index+1;
           setTotalProduct(index+1)
+          amount=amount+parseInt(item.price.slice(1,))
+          var c="$"+amount;
+          setTotalMoney(c);
           return(item.action=<div className={styles.action_buttons_wrapper}>
             <ActionButton
               buttonText={"Delete"}
@@ -69,16 +75,16 @@ const DashBoard = () => {
             ></ActionButton>
           </div>)
         })
-        searchText===""?setUnitStatsTableData(res.data):setUnitStatsTableData(res.data.filter(item=>{return (item.name.includes(searchText) || item.category.includes(searchText) || item.stock.includes(searchText) || item.price.includes(searchText))}));
+        setUnitStatsTableData(res.data);
       }else Promise.reject();
     }).catch((err)=> alert(err));
-  },[searchText])
+  },[])
 
 
 
 
-  const handleSearch = (text) => {
-  setSearchText(text);
+  const handleSearch = () => {
+  setSearchText("");
   };
 
   //dashboard table
