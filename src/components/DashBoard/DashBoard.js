@@ -35,7 +35,7 @@ const DashBoard = () => {
   const handleGetMoreDetails = (type,id,data) => {
     if(type==="Delete"){
       console.log(id)
-      axios.delete("http://localhost:3000/dashboardRoute/delete-item/"+id)
+      axios.delete("https://invetory-backend.onrender.com/dashboardRoute/delete-item/"+id)
       .then((res)=>{
         if(res.status===200){
           alert("Record Deleted Successfully");
@@ -53,7 +53,7 @@ const DashBoard = () => {
   
 
   useEffect(()=>{
-    axios.get("http://localhost:3000/dashboardRoute")
+    axios.get("https://invetory-backend.onrender.com/dashboardRoute")
     .then((res)=>{
       if(res.status===200){
         console.log(res.data);
@@ -75,16 +75,16 @@ const DashBoard = () => {
             ></ActionButton>
           </div>)
         })
-        setUnitStatsTableData(res.data);
+        setUnitStatsTableData(searchText===""?res.data:res.data.filter((item)=>item.name.includes(searchText) || item.stock.includes(searchText) || item.category.includes(searchText)));
       }else Promise.reject();
     }).catch((err)=> alert(err));
-  },[])
+  },[searchText])
 
 
 
 
-  const handleSearch = () => {
-  setSearchText("");
+  const handleSearch = (text) => {
+  setSearchText(text);
   };
 
   //dashboard table

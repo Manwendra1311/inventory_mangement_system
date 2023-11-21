@@ -20,7 +20,7 @@ const AddProduct = (props) => {
 
   const handelSubmit=()=>{
     const data={name: arr[0],category:arr[1],stock:arr[2],price:arr[3]};
-    axios.post("http://localhost:3000/dashboardRoute/create-item",data)
+    axios.post("https://invetory-backend.onrender.com/dashboardRoute/create-item",data)
     .then((res)=>{
       if(res.status===200){
         

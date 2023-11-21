@@ -14,7 +14,7 @@ const Login = ({ checkAuthentication }) => {
 
     try {
       await checkAuthentication(username, password);
-      await axios.post("http://localhost:3000/",{
+      await axios.post("https://invetory-backend.onrender.com/",{
         
         username,password
       }).then(res=>{

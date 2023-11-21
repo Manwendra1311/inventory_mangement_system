@@ -13,7 +13,7 @@ function EditModal(props) {
 
     const handleEdit=()=>{
         const data={name:name,category:category,stock:stock,price:price}
-        axios.put("http://localhost:3000/dashboardRoute/upadate-item/"+props.id,data)
+        axios.put("https://invetory-backend.onrender.com/dashboardRoute/upadate-item/"+props.id,data)
         .then((res)=>{
             if(res.status===200){
                 alert("Record Updated Successfully");
