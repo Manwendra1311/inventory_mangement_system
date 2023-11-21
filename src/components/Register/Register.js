@@ -20,7 +20,7 @@ const Register = () => {
     // navigate('/');
 
     try{
-      await axios.post("http://localhost:3000/register",{
+      await axios.post("https://invetory-backend.onrender.com/register",{
         username, password
         // navigate('/')
       }).then(res=>{

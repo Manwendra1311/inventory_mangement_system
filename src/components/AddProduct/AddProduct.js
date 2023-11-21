@@ -18,7 +18,8 @@ const AddProduct = (props) => {
     console.log(props.data);
   }
 
-  const handelSubmit=()=>{
+  const handelSubmit=(event)=>{
+    event.preventDefault();
     const data={name: arr[0],category:arr[1],stock:arr[2],price:arr[3]};
     axios.post("https://invetory-backend.onrender.com/dashboardRoute/create-item",data)
     .then((res)=>{
@@ -31,7 +32,7 @@ const AddProduct = (props) => {
     Promise.reject();
     })
     .catch((err)=>alert(err));
-
+    event.target.reset();
   }
 
 
